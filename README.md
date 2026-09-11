@@ -105,10 +105,21 @@ Once authorized, no further browser interactions or phone approvals are needed u
   uv run python enable_banking.py transactions --days 90 --csv transactions.csv
   ```
 
-- **Output Structured JSON (Ideal for Scripts & AI Agents)**:
+- **Check Active Session & Expiration Date**:
+  ```bash
+  uv run python enable_banking.py session
+  ```
+  Inspects the active session and prints the session JSON (look at `access.valid_until` to see when consent expires).
+
+- **Output Consolidated JSON (Ideal for Scripts & AI Agents)**:
   ```bash
   uv run python enable_banking.py json --days 30
   ```
+  Returns a single structured JSON payload combining account balances and transaction history in one call, designed for LLMs, personal dashboards, and automated tools.
+
+> [!NOTE]
+> **Consent Lifecycle (PSD2 180-Day Rule)**:
+> Under European PSD2 regulations, bank access consents expire periodically (typically every 180 days). You can check your remaining validity at any time via `enable_banking.py session`. When consent expires, re-run `uv run python enable_banking.py auth` to renew permissions with your bank and re-authorize the session.
 
 ---
 
