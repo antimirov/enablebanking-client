@@ -3,7 +3,19 @@ name = "enablebanking-client"
 version = "0.1.0"
 description = "A lightweight CLI client to authenticate with European banks and fetch transactions and balances via Enable Banking PSD2 API."
 readme = "README.md"
+license = "MIT"
+authors = [{ name = "Yevgen Antymyrov", email = "me@antimirov.net" }]
 requires-python = ">=3.10"
+keywords = [
+    "banking", "open-banking", "psd2", "enable-banking", "aisp",
+    "personal-finance", "bank-transactions", "fintech", "sepa",
+    "abn-amro", "revolut", "cli", "ai-agents", "hermes-agent"
+]
+
+[project.urls]
+Homepage = "https://github.com/antimirov/enablebanking-client"
+Repository = "https://github.com/antimirov/enablebanking-client"
+Issues = "https://github.com/antimirov/enablebanking-client/issues"
 dependencies = [
     "requests>=2.28.0",
     "PyJWT>=2.6.0",
